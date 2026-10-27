@@ -3,93 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt | KREATIVGARTEN</title>
+    <title>Kontakt | JM Media Production</title>
+    <!-- Verlinkung zu deiner bestehenden style.css -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Bilder/Icon.jpeg">
 </head>
 <body>
 
-    <header class="header">
-        <div class="container flex-header">
-            <div class="logo"><a href="index.html"><img src="BIlder/Logo.jpeg" alt="Kreativgarten"></a></div>
-            <nav class="navigation">
-                <ul>
-                    <li><a href="index.html">Start</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="leistungen.html">Leistungen</a></li>
-                    <li><a href="ueber-mich.html">Über mich</a></li>
-                    <li><a href="kontakt.html" class="active">Kontakt</a></li>
-                </ul>
-            </nav>
+    <!-- ================= NAVIGATION ================= -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">JM Media Production</a>
+        <div class="nav-links">
+            <a href="index.html">Startseite</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html">Über uns</a>
+            <a href="kontakt.html">Kontakt</a>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <section class="page-header">
-            <div class="container">
-                <h1>Kontakt aufnehmen</h1>
-                <p class="slogan">Gemeinsam mehr Grün!</p>
-            </div>
-        </section>
+    <!-- ================= KONTAKT BEREICH ================= -->
+    <section class="content-section">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2>Lass uns dein Projekt besprechen</h2>
+            <p>Schreibe uns unverbindlich eine Nachricht. Wir melden uns schnellstmöglich bei dir zurück.</p>
+        </div>
 
-        <!-- Split-Layout: Links die Infos, Rechts das Formular -->
-        <section class="container split-layout">
-            
-            <!-- Kontaktinformationen -->
-            <div class="contact-info">
-                <h2>So erreichen Sie uns</h2>
-                <p>Haben Sie Fragen zu unseren Leistungen oder möchten Sie ein konkretes Projekt besprechen? Rufen Sie uns an oder nutzen Sie das Kontaktformular.</p>
+        <div class="contact-container">
+            <form action="https://formsubmit.co/kontakt@jm-media-production.de" method="POST">
+             <!-- Optional: Gibt der E-Mail automatisch einen passenden Betreff -->
+                <input type="hidden" name="_subject" value="Neue Projektanfrage über die Website!">
                 
-                <div class="card" style="margin-top: 3rem; text-align: left; background-color: var(--color-bg-alt);">
-                    <h3 style="margin-bottom: 1.5rem;">Kontaktdaten:</h3>
-                    <ul style="line-height: 2.5; font-size: 1.1rem;">
-                        <li><strong>Inhaber:</strong> Luca Tullius</li>
-                        <li><strong>Telefon:</strong> <a href="tel:01716408893">0171 6408893</a></li>
-                        <li><strong>E-Mail:</strong> <a href="mailto:luca.tullius@web.de">luca.tullius@web.de</a></li>
-                    </ul>
+                <!-- Optional: Verhindert, dass der Nutzer nach dem Senden ein Captcha ausfüllen muss -->
+                <input type="hidden" name="_captcha" value="false">
+
+                <!-- NEU: Weiterleitung auf die Dankeschön-Seite -->
+               <input type="hidden" name="_next" value="https://jm-media-production.de/danke.html">
+                
+                <div class="form-group">
+                    <label for="name">Name / Ansprechpartner*in</label>
+                    <input type="text" id="name" name="name" required placeholder="Dein Name">
                 </div>
-            </div>
 
-            <!-- Kontaktformular -->
-            <div class="contact-form-wrapper">
-                <form action="#" method="POST" class="card" style="background-color: var(--color-white); border: 2px solid var(--color-bg-alt);">
-                    <h3 style="margin-bottom: 2rem;">Schreiben Sie eine Nachricht</h3>
-                    
-                    <div class="form-group">
-                        <label for="name">Ihr Name *</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">E-Mail-Adresse *</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
+                <div class="form-group">
+                    <label for="email">E-Mail Adresse</label>
+                    <input type="email" id="email" name="email" required placeholder="deine@email.de">
+                </div>
 
-                    <div class="form-group">
-                        <label for="phone">Telefonnummer (für Rückfragen)</label>
-                        <input type="tel" id="phone" name="phone" class="form-control">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Wie können wir Ihnen helfen? *</label>
-                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Nachricht absenden</button>
-                </form>
-            </div>
-            
-        </section>
-    </main>
+                <div class="form-group">
+                    <label for="company">Organisation / Feuerwehr / Firma (optional)</label>
+                    <input type="text" id="company" name="company" placeholder="Name der Organisation">
+                </div>
 
-    <footer class="footer">
-        <div class="container flex-footer">
-            <h3 style="color: var(--color-white); margin: 0;">KREATIVGARTEN</h3>
-            <ul class="footer-links">
-                <li><a href="impressum.html">Impressum</a></li>
-                <li><a href="datenschutz.html">Datenschutz</a></li>
-            </ul>
+                <div class="form-group">
+                    <label for="type">Art der Anfrage</label>
+                    <select id="type" name="type" required>
+                        <option value="" disabled selected>Bitte auswählen...</option>
+                        <option value="bos">BOS / Blaulicht (Imagefilm, Übung, Recruiting)</option>
+                        <option value="corporate">Brand / Corporate (Social Media, Event)</option>
+                        <option value="other">Sonstiges</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Deine Nachricht</label>
+                    <textarea id="message" name="message" required placeholder="Worum geht es bei deinem Projekt? Gibt es schon ein Wunschdatum?"></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary btn-submit">Nachricht senden</button>
+            </form>
         </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <p>
+            &copy; 2026 JM Media Production | Bad Kreuznach (Umgebung) | 
+            <a href="impressum.html" style="color: var(--farbe-beige); text-decoration: underline; margin-left: 5px;">Impressum</a>
+            <a href="datenschutz.html" style="color: var(--farbe-beige); text-decoration: underline; margin-left: 5px;">Datenschutz</a>
+        </p>
+        <p style="margin-top: 15px;">
+            Folgt uns auf Instagram:<br>
+            <a href="https://instagram.com/js_media.production" target="_blank">@js_media.production</a> | 
+            <a href="https://instagram.com/mad.lens_producation" target="_blank">@mad.lens_producation</a>
+        </p>
     </footer>
+
 </body>
 </html>

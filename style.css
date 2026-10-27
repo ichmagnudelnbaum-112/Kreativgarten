@@ -121,6 +121,13 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.grid-flexible-leistungen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
 }
 
 /* 2-Spalten-Layout speziell für Text-Bild-Kombinationen */
@@ -129,6 +136,8 @@ section {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 /* ==========================================================================
@@ -176,6 +185,21 @@ section {
 .card {
     background-color: var(--color-bg-main);
     padding: 2.5rem 2rem;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid var(--color-border);
+    text-align: center;
+    transition: transform var(--transition-speed) ease;
+    height: 100%; /* Wichtig für Grids: Karten sind immer gleich hoch */
+}
+
+.card-leistungen {
+    background-color: var(--color-bg-main);
+    padding: 2.5rem 2rem;
+
+
     border-radius: var(--border-radius);
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
     border: 1px solid var(--color-border);
