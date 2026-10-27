@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | KREATIVGARTEN</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container flex-header">
+            <div class="logo"><a href="index.html"><img src="BIlder/Logo.jpeg" alt="Kreativgarten"></a></div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="leistungen.html">Leistungen</a></li>
+                    <li><a href="ueber-mich.html">Über mich</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Unsere Projekte</h1>
+                <p class="slogan">Planen. Gestalten. Umsetzen.</p>
+            </div>
+        </section>
+
+        <!-- Das auto-fit Grid sorgt hier für perfekte Abstände -->
+        <section class="container">
+            <div class="grid-flexible">
+                
+                <div class="card" style="padding: 1rem;">
+                    <img src="projekt-pflaster.jpg" alt="Pflasterarbeiten" style="border-radius: 4px; margin-bottom: 1.5rem; height: 250px; object-fit: cover; width: 100%;">
+                    <h3>Pflasterarbeiten</h3>
+                    <p>Sauber verlegte Wege und Terrassen.</p>
+                </div>
+
+                <div class="card" style="padding: 1rem;">
+                    <img src="projekt-hecke.jpg" alt="Heckenschnitt" style="border-radius: 4px; margin-bottom: 1.5rem; height: 250px; object-fit: cover; width: 100%;">
+                    <h3>Heckenschnitte</h3>
+                    <p>Akkurate Form- und Pflegeschnitte.</p>
+                </div>
+
+                <div class="card" style="padding: 1rem;">
+                    <img src="projekt-neugestaltung.jpg" alt="Neugestaltung" style="border-radius: 4px; margin-bottom: 1.5rem; height: 250px; object-fit: cover; width: 100%;">
+                    <h3>Neugestaltung</h3>
+                    <p>Rodung und komplette Neuanlage.</p>
+                </div>
+
+                <div class="card" style="padding: 1rem;">
+                    <img src="projekt-rasen.jpg" alt="Rasenpflege" style="border-radius: 4px; margin-bottom: 1.5rem; height: 250px; object-fit: cover; width: 100%;">
+                    <h3>Rasenpflege</h3>
+                    <p>Sattgrüner Rasen und gepflegte Beete.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container flex-footer">
+            <h3 style="color: var(--color-white); margin: 0;">KREATIVGARTEN</h3>
+            <ul class="footer-links">
+                <li><a href="impressum.html">Impressum</a></li>
+                <li><a href="datenschutz.html">Datenschutz</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

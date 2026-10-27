@@ -1,0 +1,338 @@
+/**
+ * ==============================================================================
+ * KREATIVGARTEN - GARTEN- & LANDSCHAFTSGESTALTUNG
+ * Autor: KI-Assistent
+ * Beschreibung: Zentrales Stylesheet, optimiert für Lesbarkeit & Responsivität
+ * ==============================================================================
+ */
+
+/* ==========================================================================
+   1. VARIABLEN & THEME (Farben aus dem Flyer)
+   ========================================================================== */
+   :root {
+    /* --- Farben --- */
+    --color-primary: #2c3a29;       /* Dunkles Olivgrün (Logo/Text) */
+    --color-primary-hover: #4a5c3e; /* Helles Olivgrün (Interaktionen) */
+    --color-bg-main: #f7f6f0;       /* Creme/Beige (Haupthintergrund) */
+    --color-bg-alt: #ebeae3;        /* Dunkleres Creme (Sektionen) */
+    --color-text-main: #2c3a29;     /* Haupttext (identisch mit Primary) */
+    --color-white: #ffffff;
+    --color-border: rgba(44, 58, 41, 0.15);
+
+    /* --- Typografie --- */
+    --font-primary: 'Open Sans', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+
+    /* --- Abstände & Layout --- */
+    --max-width-container: 1200px;  /* Vergrößert für mehr "Atemraum" */
+    --spacing-section: 6rem;        /* Großzügiger Abstand zwischen Sektionen */
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+/* ==========================================================================
+   2. RESET & BASIS-STYLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-text-main);
+    background-color: var(--color-bg-main);
+    line-height: 1.8; /* Erhöht für bessere Lesbarkeit */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+main {
+    flex: 1; /* Hält den Footer am unteren Bildschirmrand */
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: color var(--transition-speed) ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   3. TYPOGRAFIE
+   ========================================================================== */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+h1 { font-size: 3rem; font-weight: 800; }
+h2 { font-size: 2.2rem; font-weight: 700; }
+h3 { font-size: 1.4rem; font-weight: 700; }
+
+.slogan {
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   4. LAYOUT & CONTAINER
+   ========================================================================== */
+.container {
+    width: 90%;
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+    padding: 0 20px; /* Verhindert das Kleben am Bildschirmrand */
+}
+
+section {
+    padding: var(--spacing-section) 0;
+}
+
+.bg-alt {
+    background-color: var(--color-bg-alt);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- Dynamische Grids (verhindern das Quetschen!) --- */
+/* Flexibles Grid, das Kacheln mindestens 280px breit macht. Wenn Platz ist, werden sie breiter. */
+.grid-flexible {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+/* 2-Spalten-Layout speziell für Text-Bild-Kombinationen */
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* ==========================================================================
+   5. KOMPONENTEN
+   ========================================================================== */
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    border: 2px solid var(--color-primary);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-bg-main);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+    color: var(--color-bg-main);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-bg-main);
+    transform: translateY(-2px);
+}
+
+/* --- Karten (Services etc.) --- */
+.card {
+    background-color: var(--color-bg-main);
+    padding: 2.5rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid var(--color-border);
+    text-align: center;
+    transition: transform var(--transition-speed) ease;
+    height: 100%; /* Wichtig für Grids: Karten sind immer gleich hoch */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--color-primary-hover);
+    margin-bottom: 1.5rem;
+}
+
+/* --- Formulare --- */
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-bg-main);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(44, 58, 41, 0.1);
+}
+
+/* ==========================================================================
+   6. SPEZIFISCHE SEKTIONEN
+   ========================================================================== */
+/* --- Header & Navigation --- */
+.header {
+    background-color: var(--color-bg-main);
+    border-bottom: 2px solid var(--color-primary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1.5rem 0;
+}
+
+.flex-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 80px;
+    width: auto;
+}
+
+.navigation ul {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.navigation a {
+    color: var(--color-text-main);
+    font-weight: 700;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    color: var(--color-primary-hover);
+    border-bottom: 2px solid var(--color-primary-hover);
+    padding-bottom: 5px;
+}
+
+/* --- Seiten-Header (Hero) --- */
+.page-header {
+    background-color: var(--color-bg-alt);
+    padding: 6rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--color-primary);
+    color: var(--color-bg-main);
+    padding: 4rem 0 2rem 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer p, .footer a {
+    color: var(--color-bg-main);
+    opacity: 0.8;
+}
+
+.flex-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 2rem;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   7. MEDIA QUERIES (Responsivität)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .split-layout {
+        grid-template-columns: 1fr; /* Wird bei Tablets einspaltig */
+        gap: 3rem;
+    }
+    h1 { font-size: 2.5rem; }
+}
+
+@media (max-width: 768px) {
+    .flex-header {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .navigation ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem 1.5rem;
+    }
+
+    section { padding: 4rem 0; }
+}
