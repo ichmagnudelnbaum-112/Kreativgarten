@@ -3,149 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | JM Media Production</title>
+    <title>Portfolio | KREATIVGARTEN</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="Bilder/Icon.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- NAVIGATION -->
-    <nav class="navbar">
-        <a href="index.html" class="logo">JM Media Production</a>
-        <div class="nav-links">
-            <a href="index.html">Startseite</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="about.html">Über uns</a>
-            <a href="kontakt.html">Kontakt</a>
+    <header class="header">
+        <div class="container flex-header">
+            <div class="logo"><a href="index.html"><img src="BIlder/Logo.jpeg" alt="Kreativgarten"></a></div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="leistungen.html">Leistungen</a></li>
+                    <li><a href="ueber-mich.html">Über mich</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- PORTFOLIO BEREICH -->
-    <section class="content-section">
-        
-        <!-- KATEGORIE 1 -->
-        <h2>BOS & Blaulicht</h2>
-        <p>Recruiting, Einsatzdokumentation und Imagefilme für Behörden und Organisationen mit Sicherheitsaufgaben.</p>
-        
-        <!-- HIER WURDE DIE BREITE ANGEPASST (fit-content) -->
-        <div class="slider-wrapper" style="width: fit-content; max-width: 100%;">
-            <button class="slide-btn prev-btn" onclick="slideLeft('bos-slider')">&#10094;</button>
-            
-            <div class="portfolio-slider" id="bos-slider">
-                <!-- Mix aus breitem Querformat (800x533) und Hochformat (400x600) -->
-                <div class="portfolio-item"><img src="Bilder/KDOW.jpg" onclick="openLightbox(this)"></div>
-                <div class="portfolio-item"><img src="Bilder/TSFWSonnenuntergang.jpg" onclick="openLightbox(this)"></div>
-                <div class="portfolio-item"><img src="Bilder/Feldbrand.jpg" onclick="openLightbox(this)"></div>
-                <div class="portfolio-item"><img src="Bilder/CSATräger.jpg" onclick="openLightbox(this)"></div>
-                <div class="portfolio-item"><img src="Bilder/ELW1.jpg" onclick="openLightbox(this)"></div>
-                <div class="portfolio-item"><img src="Bilder/AGTTräger.jpg" onclick="openLightbox(this)"></div>
-                <div class="portfolio-item"><img src="Bilder/CSATräger2.jpg" onclick="openLightbox(this)"></div>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Unsere Projekte</h1>
+                <p class="slogan">Planen. Gestalten. Umsetzen.</p>
             </div>
-            
-            <button class="slide-btn next-btn" onclick="slideRight('bos-slider')">&#10095;</button>
-        </div>
+        </section>
 
-        <!-- KATEGORIE 2 -->
-        <h2 style="margin-top: 40px;">Brands & Events</h2>
-        <p>Corporate Content, Eventbegleitung und Social Media Clips für Unternehmen.</p>
-        
-        <!-- HIER WURDE DIE BREITE ANGEPASST (fit-content) -->
-        <div class="slider-wrapper" >
-            <button class="slide-btn prev-btn" onclick="slideLeft('brand-slider')">&#10094;</button>
-            
-            <div class="portfolio-slider" id="brand-slider">
-                <div class="portfolio-item">
-                    <video src="Videos/AbiballNeu.mp4" autoplay loop muted playsinline onclick="openLightbox(this)"></video>
+        <!-- Das auto-fit Grid sorgt hier für perfekte Abstände -->
+        <section class="container">
+            <div class="grid-flexible">
+                
+                <div class="card" style="padding: 1rem;">
+                    <img src="projekt-pflaster.jpg" alt="Pflasterarbeiten" style="border-radius: 4px; margin-bottom: 1.5rem; height: 250px; object-fit: cover; width: 100%;">
+                    <h3>Pflasterarbeiten</h3>
+                    <p>Sauber verlegte Wege und Terrassen.</p>
                 </div>
 
-                <div class="portfolio-item">
-                    <video src="Videos/Highlight-Video.mp4" autoplay loop muted playsinline onclick="openLightbox(this)"></video>
+                <div class="card" style="padding: 1rem;">
+                    <img src="projekt-hecke.jpg" alt="Heckenschnitt" style="border-radius: 4px; margin-bottom: 1.5rem; height: 250px; object-fit: cover; width: 100%;">
+                    <h3>Heckenschnitte</h3>
+                    <p>Akkurate Form- und Pflegeschnitte.</p>
                 </div>
+
+                <div class="card" style="padding: 1rem;">
+                    <img src="projekt-neugestaltung.jpg" alt="Neugestaltung" style="border-radius: 4px; margin-bottom: 1.5rem; height: 250px; object-fit: cover; width: 100%;">
+                    <h3>Neugestaltung</h3>
+                    <p>Rodung und komplette Neuanlage.</p>
+                </div>
+
+                <div class="card" style="padding: 1rem;">
+                    <img src="projekt-rasen.jpg" alt="Rasenpflege" style="border-radius: 4px; margin-bottom: 1.5rem; height: 250px; object-fit: cover; width: 100%;">
+                    <h3>Rasenpflege</h3>
+                    <p>Sattgrüner Rasen und gepflegte Beete.</p>
+                </div>
+
             </div>
+        </section>
+    </main>
 
-            
-            <button class="slide-btn next-btn" onclick="slideRight('brand-slider')">&#10095;</button>
-        </div>
-
-    </section>
-
-<!-- ================= LIGHTBOX (VERSTECKT) ================= -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
-        <span class="close-lightbox" onclick="closeLightbox(event)">&times;</span>
-        <div class="lightbox-content">
-            <!-- Hier wird später per JavaScript das Bild oder Video reingeladen -->
-            <img id="lightbox-img" src="" style="display: none;">
-            <video id="lightbox-video" src="" controls style="display: none;"></video>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
     <footer class="footer">
-         <p>
-            &copy; 2026 JM Media Production | Bad Kreuznach (Umgebung) | 
-            <a href="impressum.html" style="color: var(--farbe-beige); text-decoration: underline; margin-left: 5px;">Impressum</a>
-            <a href="datenschutz.html" style="color: var(--farbe-beige); text-decoration: underline; margin-left: 5px;">Datenschutz</a>
-        </p>
-        <p style="margin-top: 15px;">
-            Folgt uns auf Instagram:<br>
-            <a href="https://instagram.com/js_media.production" target="_blank">@js_media.production</a> | 
-            <a href="https://instagram.com/mad.lens_production" target="_blank">@mad.lens_production</a>
-        </p>
+        <div class="container flex-footer">
+            <h3 style="color: var(--color-white); margin: 0;">KREATIVGARTEN</h3>
+            <ul class="footer-links">
+                <li><a href="impressum.html">Impressum</a></li>
+                <li><a href="datenschutz.html">Datenschutz</a></li>
+            </ul>
+        </div>
     </footer>
-
-<!-- ================= JAVASCRIPT FÜR SLIDER & LIGHTBOX ================= -->
-    <script>
-        /* === 1. SLIDER FUNKTIONEN === */
-        function slideRight(sliderId) {
-            const slider = document.getElementById(sliderId);
-            const scrollAmount = slider.clientWidth * 0.8; 
-            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' }); 
-        }
-
-        function slideLeft(sliderId) {
-            const slider = document.getElementById(sliderId);
-            const scrollAmount = slider.clientWidth * 0.8;
-            slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        }
-
-        /* === 2. LIGHTBOX FUNKTIONEN === */
-        const lightbox = document.getElementById('lightbox');
-        const lbImg = document.getElementById('lightbox-img');
-        const lbVideo = document.getElementById('lightbox-video');
-
-        // Funktion: Öffnen (Wird aufgerufen, wenn man auf ein Bild/Video klickt)
-        function openLightbox(element) {
-            // Erstmal beides (Bild & Video) im Geisterfenster verstecken und Video stoppen
-            lbImg.style.display = 'none';
-            lbVideo.style.display = 'none';
-            lbVideo.pause(); 
-
-            // Prüfen, ob der Nutzer auf ein VIDEO geklickt hat
-            if (element.tagName.toLowerCase() === 'video') {
-                lbVideo.src = element.currentSrc || element.src; // Nimmt die Video-Quelle
-                lbVideo.style.display = 'block'; // Zeigt das Video-Element in der Lightbox
-                lbVideo.play(); // Startet es automatisch (Ton kann über die normalen Controls im Video geregelt werden!)
-            } 
-            // Prüfen, ob der Nutzer auf ein BILD geklickt hat
-            else if (element.tagName.toLowerCase() === 'img') {
-                lbImg.src = element.src; // Nimmt die Bild-Quelle
-                lbImg.style.display = 'block'; // Zeigt das Bild-Element
-            }
-
-            // Verdunkelung einblenden
-            lightbox.style.display = 'flex';
-        }
-
-        // Funktion: Schließen (Wenn man auf das X oder in den Hintergrund klickt)
-        function closeLightbox(event) {
-            // Verhindern, dass es sich schließt, wenn man INS Video klickt (um z.B. Lautstärke zu ändern)
-            if(event.target.id === 'lightbox-video' || event.target.id === 'lightbox-img') return;
-            
-            lightbox.style.display = 'none';
-            lbVideo.pause(); // Video sofort stoppen, wenn die Lightbox zugeht!
-            lbVideo.src = ""; // Quelle leeren
-            lbImg.src = "";
-        }
-    </script>
 </body>
 </html>
