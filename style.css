@@ -164,16 +164,28 @@ section {
 
 /* --- Allgemeine Karten --- */
 .card {
-    background-color: var(--color-bg-main); padding: 2.5rem 2rem; margin-bottom: 4rem; margin-top: 2rem;
-    border-radius: var(--border-radius); box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid var(--color-border);
-    text-align: center; transition: transform var(--transition-speed) ease; height: 100%; 
+    background-color: var(--color-bg-main); 
+    padding: 2.5rem 2rem; 
+    /* margin-bottom und margin-top wurden hier entfernt! */
+    border-radius: var(--border-radius); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+    border: 1px solid var(--color-border);
+    text-align: center; 
+    transition: transform var(--transition-speed) ease; 
+    height: 100%; 
 }
 .card:hover { transform: translateY(-8px); }
 
 .card-leistungen {
-    background-color: var(--color-bg-main); padding: 2.5rem 2rem; border-radius: var(--border-radius);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid var(--color-border); text-align: center;
-    transition: transform var(--transition-speed) ease; height: 100%; 
+    background-color: var(--color-bg-main); 
+    padding: 2.5rem 2rem; 
+    /* margin-bottom und margin-top wurden hier entfernt! */
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+    border: 1px solid var(--color-border); 
+    text-align: center;
+    transition: transform var(--transition-speed) ease; 
+    height: 100%; 
 }
 
 .card-icon { font-size: 2.5rem; color: var(--color-primary-hover); margin-bottom: 1.5rem; }
@@ -228,11 +240,31 @@ section {
 
 .page-header { background-color: var(--color-bg-alt); padding: 6rem 0; text-align: center; border-bottom: 1px solid var(--color-border); }
 
-.footer { background-color: var(--color-primary); color: var(--color-bg-main); padding: 5rem 0 2rem 0; text-align: center; margin-top: auto; }
+.footer { 
+    background-color: var(--color-primary); 
+    color: var(--color-bg-main); 
+    padding: 3rem 0 2rem 0; /* Padding oben von 5rem auf 3rem verkleinert */
+    text-align: center; 
+    margin-top: auto; 
+}
 .footer p, .footer a { color: var(--color-bg-main); opacity: 0.8; }
-.flex-footer { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
-.footer-links { display: flex; gap: 2rem; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; }
+
+.flex-footer { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 1rem; /* Gap von 2rem auf 1rem verkleinert */
+}
+
+.footer-links { 
+    display: flex; 
+    gap: 2rem; 
+    margin-top: 0.5rem; /* Von 1rem auf 0.5rem verkleinert */
+    border-top: 1px solid rgba(255,255,255,0.1); 
+    padding-top: 1.5rem; /* Von 2rem auf 1.5rem verkleinert */
+}
 .footer-links a:hover { opacity: 1; }
+
 
 /* ==========================================================================
    7. MEDIA QUERIES (Responsivität)
