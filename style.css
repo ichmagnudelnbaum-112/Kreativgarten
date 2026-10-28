@@ -1,7 +1,7 @@
 /**
  * ==============================================================================
  * KREATIVGARTEN - GARTEN- & LANDSCHAFTSGESTALTUNG
- * Autor: KI-Assistent
+ * 
  * Beschreibung: Zentrales Stylesheet, optimiert für Lesbarkeit & Responsivität
  * ==============================================================================
  */
@@ -306,7 +306,7 @@ section {
 .footer {
     background-color: var(--color-primary);
     color: var(--color-bg-main);
-    padding: 4rem 0 2rem 0;
+    padding: 0rem 0 2rem 0;
     text-align: center;
     margin-top: auto;
 }
