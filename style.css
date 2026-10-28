@@ -11,11 +11,11 @@
    ========================================================================== */
 :root {
     /* --- Farben --- */
-    --color-primary: #2c3a29;       /* Dunkles Olivgrün (Logo/Text) */
-    --color-primary-hover: #4a5c3e; /* Helles Olivgrün (Interaktionen) */
-    --color-bg-main: #f7f6f0;       /* Creme/Beige (Haupthintergrund) */
-    --color-bg-alt: #ebeae3;        /* Dunkleres Creme (Sektionen) */
-    --color-text-main: #2c3a29;     /* Haupttext (identisch mit Primary) */
+    --color-primary: #2c3a29;       
+    --color-primary-hover: #4a5c3e; 
+    --color-bg-main: #f7f6f0;       
+    --color-bg-alt: #ebeae3;        
+    --color-text-main: #2c3a29;     
     --color-white: #ffffff;
     --color-border: rgba(44, 58, 41, 0.15);
 
@@ -155,124 +155,54 @@ section {
     text-align: center;
 }
 
-.btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-bg-main);
-}
-.btn-primary:hover {
-    background-color: var(--color-primary-hover);
-    border-color: var(--color-primary-hover);
-    color: var(--color-bg-main);
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--color-primary);
-}
-.btn-secondary:hover {
-    background-color: var(--color-primary);
-    color: var(--color-bg-main);
-    transform: translateY(-2px);
-}
+.btn-primary { background-color: var(--color-primary); color: var(--color-bg-main); }
+.btn-primary:hover { background-color: var(--color-primary-hover); border-color: var(--color-primary-hover); color: var(--color-bg-main); transform: translateY(-2px); }
+.btn-secondary { background-color: transparent; color: var(--color-primary); }
+.btn-secondary:hover { background-color: var(--color-primary); color: var(--color-bg-main); transform: translateY(-2px); }
 
 /* --- Allgemeine Karten --- */
 .card {
-    background-color: var(--color-bg-main);
-    padding: 2.5rem 2rem;
-    margin-bottom: 4rem;
-    margin-top: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-    border: 1px solid var(--color-border);
-    text-align: center;
-    transition: transform var(--transition-speed) ease;
-    height: 100%; 
+    background-color: var(--color-bg-main); padding: 2.5rem 2rem; margin-bottom: 4rem; margin-top: 2rem;
+    border-radius: var(--border-radius); box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid var(--color-border);
+    text-align: center; transition: transform var(--transition-speed) ease; height: 100%; 
 }
-.card:hover {
-    transform: translateY(-8px);
-}
+.card:hover { transform: translateY(-8px); }
 
 .card-leistungen {
-    background-color: var(--color-bg-main);
-    padding: 2.5rem 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-    border: 1px solid var(--color-border);
-    text-align: center;
-    transition: transform var(--transition-speed) ease;
-    height: 100%; 
+    background-color: var(--color-bg-main); padding: 2.5rem 2rem; border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid var(--color-border); text-align: center;
+    transition: transform var(--transition-speed) ease; height: 100%; 
 }
 
-.card-icon {
-    font-size: 2.5rem;
-    color: var(--color-primary-hover);
-    margin-bottom: 1.5rem;
-}
+.card-icon { font-size: 2.5rem; color: var(--color-primary-hover); margin-bottom: 1.5rem; }
 
-/* --- NEU: Portfolio Karten --- */
+/* --- Portfolio Karten --- */
 .card-portfolio {
-    background-color: var(--color-bg-main);
-    padding: 1.5rem; /* Etwas weniger Padding für mehr Bildfläche */
-    border-radius: var(--border-radius);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-    border: 1px solid var(--color-border);
-    text-align: center;
-    transition: transform var(--transition-speed) ease;
-    display: flex;
-    flex-direction: column;
+    background-color: var(--color-bg-main); padding: 1.5rem; border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid var(--color-border); text-align: center;
+    transition: transform var(--transition-speed) ease; display: flex; flex-direction: column;
 }
-.card-portfolio:hover {
-    transform: translateY(-8px);
-}
+.card-portfolio:hover { transform: translateY(-8px); }
 
-/* Bild-Format für Standard-Karte (1 Bild) */
 .portfolio-img {
-    border-radius: 4px;
-    margin-bottom: 1.5rem;
-    height: 250px;
-    object-fit: cover;
-    width: 100%;
+    border-radius: 4px; margin-bottom: 1.5rem; height: 250px; object-fit: cover; width: 100%; cursor: pointer;
 }
 
-/* Vorher/Nachher Layout innerhalb der Karte */
-.ba-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-.ba-img-wrapper {
-    position: relative;
-}
-.ba-img-wrapper img {
-    height: 220px; 
-    object-fit: cover;
-    width: 100%;
-    border-radius: 4px;
-}
+.ba-container { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1.5rem; }
+.ba-img-wrapper { position: relative; }
+.ba-img-wrapper img { height: 220px; object-fit: cover; width: 100%; border-radius: 4px; cursor: pointer; }
 .ba-label {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    background-color: rgba(44, 58, 41, 0.85); /* Halbtransparentes Logo-Grün */
-    color: var(--color-white);
-    padding: 4px 10px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    border-radius: 4px;
-    letter-spacing: 1px;
-    z-index: 2;
+    position: absolute; top: 8px; left: 8px; background-color: rgba(44, 58, 41, 0.85); color: var(--color-white);
+    padding: 4px 10px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; border-radius: 4px;
+    letter-spacing: 1px; z-index: 2; pointer-events: none;
 }
 
 /* --- Formulare --- */
 .form-group { margin-bottom: 1.5rem; text-align: left; }
 .form-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-primary); }
 .form-control {
-    width: 100%; padding: 1rem; border: 1px solid var(--color-border);
-    border-radius: var(--border-radius); background-color: var(--color-bg-main);
-    font-family: var(--font-primary); font-size: 1rem; transition: border-color 0.3s ease;
+    width: 100%; padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--border-radius);
+    background-color: var(--color-bg-main); font-family: var(--font-primary); font-size: 1rem; transition: border-color 0.3s ease;
 }
 .form-control:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(44, 58, 41, 0.1); }
 
@@ -316,12 +246,64 @@ section {
     section { padding: 4rem 0; }
 }
 
-/* Auf Handys brechen die Vorher/Nachher Bilder untereinander um */
 @media (max-width: 500px) {
-    .ba-container {
-        grid-template-columns: 1fr;
-    }
-    .ba-img-wrapper img {
-        height: 200px; 
-    }
+    .ba-container { grid-template-columns: 1fr; }
+    .ba-img-wrapper img { height: 200px; }
+}
+
+/* ==========================================================================
+   8. LIGHTBOX / VOLLBILD-GALERIE (NEU)
+   ========================================================================== */
+.lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 20, 14, 0.95);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.6);
+    user-select: none;
+}
+
+.lightbox-close, .lightbox-prev, .lightbox-next {
+    position: absolute;
+    color: var(--color-white);
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 1001;
+    user-select: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.lightbox-close { top: 20px; right: 30px; font-size: 3.5rem; }
+.lightbox-prev, .lightbox-next {
+    top: 50%; transform: translateY(-50%); padding: 20px; background: rgba(0, 0, 0, 0.3); border-radius: 4px;
+}
+.lightbox-prev:hover, .lightbox-next:hover, .lightbox-close:hover { color: #c9d6c2; transform: translateY(-50%) scale(1.1); }
+.lightbox-close:hover { transform: scale(1.1); }
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+@media (max-width: 768px) {
+    .lightbox-prev, .lightbox-next { font-size: 2rem; padding: 10px; }
+    .lightbox-prev { left: 10px; }
+    .lightbox-next { right: 10px; }
 }

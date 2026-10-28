@@ -9,6 +9,7 @@
 </head>
 <body>
 
+    <!-- ================= HEADER ================= -->
     <header class="header">
         <div class="container flex-header">
             <div class="logo"><a href="index.html"><img src="Bilder/logo.jpeg" alt="Kreativgarten"></a></div>
@@ -25,6 +26,7 @@
     </header>
 
     <main>
+        <!-- ================= SEITENKOPF ================= -->
         <section class="page-header">
             <div class="container">
                 <h1>Unsere Projekte</h1>
@@ -32,21 +34,20 @@
             </div>
         </section>
 
+        <!-- ================= PORTFOLIO KARTEN ================= -->
         <section class="container">
             <div class="grid-flexible">
                 
                 <!-- KARTEN-TYP 1: Vorher/Nachher Karte -->
                 <div class="card-portfolio">
                     <div class="ba-container">
-                        <!-- Bild 1 (Vorher) -->
                         <div class="ba-img-wrapper">
                             <span class="ba-label">Vorher</span>
-                            <img src="projekt-neugestaltung-vorher.jpg" alt="Zustand Vorher">
+                            <img src="projekt-neugestaltung-vorher.jpg" alt="Zustand Vorher" data-lightbox="portfolio">
                         </div>
-                        <!-- Bild 2 (Nachher) -->
                         <div class="ba-img-wrapper">
                             <span class="ba-label">Nachher</span>
-                            <img src="projekt-neugestaltung-nachher.jpg" alt="Zustand Nachher">
+                            <img src="projekt-neugestaltung-nachher.jpg" alt="Zustand Nachher" data-lightbox="portfolio">
                         </div>
                     </div>
                     <h3>Neugestaltung</h3>
@@ -55,23 +56,21 @@
 
                 <!-- KARTEN-TYP 2: Standard Karte (nur 1 Bild) -->
                 <div class="card-portfolio">
-                    <img src="projekt-pflaster.jpg" alt="Pflasterarbeiten" class="portfolio-img">
+                    <img src="projekt-pflaster.jpg" alt="Pflasterarbeiten" class="portfolio-img" data-lightbox="portfolio">
                     <h3>Pflasterarbeiten</h3>
                     <p>Sauber verlegte Wege und Terrassen.</p>
                 </div>
 
-                <!-- KARTEN-TYP 1: Noch eine Vorher/Nachher Karte -->
+                <!-- KARTEN-TYP 1: Vorher/Nachher Karte -->
                 <div class="card-portfolio">
                     <div class="ba-container">
-                        <!-- Bild 1 (Vorher) -->
                         <div class="ba-img-wrapper">
                             <span class="ba-label">Vorher</span>
-                            <img src="projekt-hecke-vorher.jpg" alt="Hecke ungeschnitten">
+                            <img src="projekt-hecke-vorher.jpg" alt="Hecke ungeschnitten" data-lightbox="portfolio">
                         </div>
-                        <!-- Bild 2 (Nachher) -->
                         <div class="ba-img-wrapper">
                             <span class="ba-label">Nachher</span>
-                            <img src="projekt-hecke-nachher.jpg" alt="Hecke geschnitten">
+                            <img src="projekt-hecke-nachher.jpg" alt="Hecke geschnitten" data-lightbox="portfolio">
                         </div>
                     </div>
                     <h3>Heckenschnitte</h3>
@@ -80,7 +79,7 @@
 
                 <!-- KARTEN-TYP 2: Standard Karte (nur 1 Bild) -->
                 <div class="card-portfolio">
-                    <img src="projekt-rasen.jpg" alt="Rasenpflege" class="portfolio-img">
+                    <img src="projekt-rasen.jpg" alt="Rasenpflege" class="portfolio-img" data-lightbox="portfolio">
                     <h3>Rasenpflege</h3>
                     <p>Sattgrüner Rasen und gepflegte Beete durch unsere Betreuung.</p>
                 </div>
@@ -89,6 +88,7 @@
         </section>
     </main>
 
+    <!-- ================= FOOTER ================= -->
     <footer class="footer">
         <div class="container flex-footer">
             <h3 style="color: var(--color-white); margin: 0;">KREATIVGARTEN</h3>
@@ -98,5 +98,76 @@
             </ul>
         </div>
     </footer>
+
+    <!-- ================= LIGHTBOX (Vollbild) HTML ================= -->
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <span class="lightbox-prev">&#10094;</span>
+        <span class="lightbox-next">&#10095;</span>
+        <img id="lightbox-img" class="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- ================= LIGHTBOX JAVASCRIPT ================= -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll('img[data-lightbox="portfolio"]');
+            const imageArray = Array.from(images);
+            
+            const modal = document.getElementById("lightbox-modal");
+            const modalImg = document.getElementById("lightbox-img");
+            const closeBtn = document.querySelector(".lightbox-close");
+            const prevBtn = document.querySelector(".lightbox-prev");
+            const nextBtn = document.querySelector(".lightbox-next");
+
+            let currentIndex = 0;
+
+            imageArray.forEach((img, index) => {
+                img.addEventListener("click", () => {
+                    currentIndex = index;
+                    updateLightboxImage();
+                    modal.classList.add("active");
+                    document.body.style.overflow = "hidden";
+                });
+            });
+
+            function closeLightbox() {
+                modal.classList.remove("active");
+                document.body.style.overflow = "auto"; 
+            }
+
+            closeBtn.addEventListener("click", closeLightbox);
+            modal.addEventListener("click", (e) => {
+                if (e.target === modal) {
+                    closeLightbox();
+                }
+            });
+
+            function updateLightboxImage() {
+                modalImg.src = imageArray[currentIndex].src;
+                modalImg.alt = imageArray[currentIndex].alt || "Portfolio Bild";
+            }
+
+            function showNext() {
+                currentIndex = (currentIndex + 1) % imageArray.length;
+                updateLightboxImage();
+            }
+
+            function showPrev() {
+                currentIndex = (currentIndex - 1 + imageArray.length) % imageArray.length;
+                updateLightboxImage();
+            }
+
+            prevBtn.addEventListener("click", showPrev);
+            nextBtn.addEventListener("click", showNext);
+
+            document.addEventListener("keydown", (e) => {
+                if (!modal.classList.contains("active")) return;
+                
+                if (e.key === "Escape") closeLightbox();
+                if (e.key === "ArrowRight") showNext();
+                if (e.key === "ArrowLeft") showPrev();
+            });
+        });
+    </script>
 </body>
 </html>
