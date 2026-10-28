@@ -9,7 +9,7 @@
 /* ==========================================================================
    1. VARIABLEN & THEME (Farben aus dem Flyer)
    ========================================================================== */
-   :root {
+:root {
     /* --- Farben --- */
     --color-primary: #2c3a29;       /* Dunkles Olivgrün (Logo/Text) */
     --color-primary-hover: #4a5c3e; /* Helles Olivgrün (Interaktionen) */
@@ -24,8 +24,8 @@
     --font-heading: 'Montserrat', sans-serif;
 
     /* --- Abstände & Layout --- */
-    --max-width-container: 1200px;  /* Vergrößert für mehr "Atemraum" */
-    --spacing-section: 6rem;        /* Großzügiger Abstand zwischen Sektionen */
+    --max-width-container: 1200px;  
+    --spacing-section: 6rem;        
     --border-radius: 8px;
     --transition-speed: 0.3s;
 }
@@ -43,7 +43,7 @@ body {
     font-family: var(--font-primary);
     color: var(--color-text-main);
     background-color: var(--color-bg-main);
-    line-height: 1.8; /* Erhöht für bessere Lesbarkeit */
+    line-height: 1.8; 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -51,7 +51,7 @@ body {
 }
 
 main {
-    flex: 1; /* Hält den Footer am unteren Bildschirmrand */
+    flex: 1; 
 }
 
 a {
@@ -100,7 +100,7 @@ h3 { font-size: 1.4rem; font-weight: 700; }
     width: 90%;
     max-width: var(--max-width-container);
     margin: 0 auto;
-    padding: 0 20px; /* Verhindert das Kleben am Bildschirmrand */
+    padding: 0 20px; 
 }
 
 section {
@@ -115,8 +115,6 @@ section {
     text-align: center;
 }
 
-/* --- Dynamische Grids (verhindern das Quetschen!) --- */
-/* Flexibles Grid, das Kacheln mindestens 280px breit macht. Wenn Platz ist, werden sie breiter. */
 .grid-flexible {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -130,7 +128,6 @@ section {
     gap: 3rem;
 }
 
-/* 2-Spalten-Layout speziell für Text-Bild-Kombinationen */
 .split-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -162,7 +159,6 @@ section {
     background-color: var(--color-primary);
     color: var(--color-bg-main);
 }
-
 .btn-primary:hover {
     background-color: var(--color-primary-hover);
     border-color: var(--color-primary-hover);
@@ -174,14 +170,13 @@ section {
     background-color: transparent;
     color: var(--color-primary);
 }
-
 .btn-secondary:hover {
     background-color: var(--color-primary);
     color: var(--color-bg-main);
     transform: translateY(-2px);
 }
 
-/* --- Karten (Services etc.) --- */
+/* --- Allgemeine Karten --- */
 .card {
     background-color: var(--color-bg-main);
     padding: 2.5rem 2rem;
@@ -192,24 +187,21 @@ section {
     border: 1px solid var(--color-border);
     text-align: center;
     transition: transform var(--transition-speed) ease;
-    height: 100%; /* Wichtig für Grids: Karten sind immer gleich hoch */
+    height: 100%; 
+}
+.card:hover {
+    transform: translateY(-8px);
 }
 
 .card-leistungen {
     background-color: var(--color-bg-main);
     padding: 2.5rem 2rem;
-
-
     border-radius: var(--border-radius);
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
     border: 1px solid var(--color-border);
     text-align: center;
     transition: transform var(--transition-speed) ease;
-    height: 100%; /* Wichtig für Grids: Karten sind immer gleich hoch */
-}
-
-.card:hover {
-    transform: translateY(-8px);
+    height: 100%; 
 }
 
 .card-icon {
@@ -218,145 +210,118 @@ section {
     margin-bottom: 1.5rem;
 }
 
-/* --- Formulare --- */
-.form-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--color-primary);
-}
-
-.form-control {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
+/* --- NEU: Portfolio Karten --- */
+.card-portfolio {
     background-color: var(--color-bg-main);
-    font-family: var(--font-primary);
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
+    padding: 1.5rem; /* Etwas weniger Padding für mehr Bildfläche */
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid var(--color-border);
+    text-align: center;
+    transition: transform var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+}
+.card-portfolio:hover {
+    transform: translateY(-8px);
 }
 
-.form-control:focus {
-    outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(44, 58, 41, 0.1);
+/* Bild-Format für Standard-Karte (1 Bild) */
+.portfolio-img {
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    height: 250px;
+    object-fit: cover;
+    width: 100%;
 }
+
+/* Vorher/Nachher Layout innerhalb der Karte */
+.ba-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.ba-img-wrapper {
+    position: relative;
+}
+.ba-img-wrapper img {
+    height: 220px; 
+    object-fit: cover;
+    width: 100%;
+    border-radius: 4px;
+}
+.ba-label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: rgba(44, 58, 41, 0.85); /* Halbtransparentes Logo-Grün */
+    color: var(--color-white);
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+/* --- Formulare --- */
+.form-group { margin-bottom: 1.5rem; text-align: left; }
+.form-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-primary); }
+.form-control {
+    width: 100%; padding: 1rem; border: 1px solid var(--color-border);
+    border-radius: var(--border-radius); background-color: var(--color-bg-main);
+    font-family: var(--font-primary); font-size: 1rem; transition: border-color 0.3s ease;
+}
+.form-control:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(44, 58, 41, 0.1); }
 
 /* ==========================================================================
    6. SPEZIFISCHE SEKTIONEN
    ========================================================================== */
-/* --- Header & Navigation --- */
 .header {
-    background-color: var(--color-bg-main);
-    border-bottom: 2px solid var(--color-primary);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    padding: 1.5rem 0;
+    background-color: var(--color-bg-main); border-bottom: 2px solid var(--color-primary);
+    position: sticky; top: 0; z-index: 100; padding: 1.5rem 0;
 }
-
-.flex-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo img {
-    max-height: 80px;
-    width: auto;
-}
-
-.navigation ul {
-    display: flex;
-    gap: 2.5rem;
-    align-items: center;
-}
-
+.flex-header { display: flex; justify-content: space-between; align-items: center; }
+.logo img { max-height: 80px; width: auto; }
+.navigation ul { display: flex; gap: 2.5rem; align-items: center; }
 .navigation a {
-    color: var(--color-text-main);
-    font-weight: 700;
-    font-family: var(--font-heading);
-    text-transform: uppercase;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
+    color: var(--color-text-main); font-weight: 700; font-family: var(--font-heading);
+    text-transform: uppercase; font-size: 0.95rem; letter-spacing: 1px;
+}
+.navigation a:hover, .navigation a.active {
+    color: var(--color-primary-hover); border-bottom: 2px solid var(--color-primary-hover); padding-bottom: 5px;
 }
 
-.navigation a:hover,
-.navigation a.active {
-    color: var(--color-primary-hover);
-    border-bottom: 2px solid var(--color-primary-hover);
-    padding-bottom: 5px;
-}
+.page-header { background-color: var(--color-bg-alt); padding: 6rem 0; text-align: center; border-bottom: 1px solid var(--color-border); }
 
-/* --- Seiten-Header (Hero) --- */
-.page-header {
-    background-color: var(--color-bg-alt);
-    padding: 6rem 0;
-    text-align: center;
-    border-bottom: 1px solid var(--color-border);
-}
-
-/* --- Footer --- */
-.footer {
-    background-color: var(--color-primary);
-    color: var(--color-bg-main);
-    padding: 5rem 0 2rem 0;
-    text-align: center;
-    margin-top: auto;
-}
-
-.footer p, .footer a {
-    color: var(--color-bg-main);
-    opacity: 0.8;
-}
-
-.flex-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-
-.footer-links {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 2rem;
-}
-
-.footer-links a:hover {
-    opacity: 1;
-}
+.footer { background-color: var(--color-primary); color: var(--color-bg-main); padding: 5rem 0 2rem 0; text-align: center; margin-top: auto; }
+.footer p, .footer a { color: var(--color-bg-main); opacity: 0.8; }
+.flex-footer { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+.footer-links { display: flex; gap: 2rem; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; }
+.footer-links a:hover { opacity: 1; }
 
 /* ==========================================================================
    7. MEDIA QUERIES (Responsivität)
    ========================================================================== */
 @media (max-width: 992px) {
-    .split-layout {
-        grid-template-columns: 1fr; /* Wird bei Tablets einspaltig */
-        gap: 3rem;
-    }
+    .split-layout { grid-template-columns: 1fr; gap: 3rem; }
     h1 { font-size: 2.5rem; }
 }
 
 @media (max-width: 768px) {
-    .flex-header {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    
-    .navigation ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem 1.5rem;
-    }
-
+    .flex-header { flex-direction: column; gap: 1.5rem; }
+    .navigation ul { flex-wrap: wrap; justify-content: center; gap: 1rem 1.5rem; }
     section { padding: 4rem 0; }
+}
+
+/* Auf Handys brechen die Vorher/Nachher Bilder untereinander um */
+@media (max-width: 500px) {
+    .ba-container {
+        grid-template-columns: 1fr;
+    }
+    .ba-img-wrapper img {
+        height: 200px; 
+    }
 }
